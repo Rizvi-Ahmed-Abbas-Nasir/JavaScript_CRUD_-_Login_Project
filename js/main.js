@@ -116,6 +116,58 @@ const Sortobj = sortobj =>{
 
 read.onclick = table;
 
+// create dynamic elemetns
+const createEle = (tagname, appendTo, fn) =>{
+    const element = document.createElement(tagname);
+    if(appendTo) appendTo.appendChild(element);
+    if(fn)fn(element);
+} 
+
 function table(){
-    
+
+    //create element dynamiclly 
+    const tbody = document.getElementById('tbody');
+    // create element and append to the parent element 
+    // let td = document.createElement('td')
+    // console.log(tbody)
+    // tbody.appendChild(td)
+    // console.log(td)
+
+    // create element using function (dymanically)
+    // createEle("td",tbody,(td) =>{
+    //     console.log(td);
+    //     console.log(tbody)
+    // })
+
+    while(tbody.hasChildNodes()){
+        tbody.removeChild(tbody.firstChild)
+    }
+
+    getData(db.products, (data)=>{
+        console.log(data)
+
+        if(data){
+            createEle("tr",tbody, tr =>{
+                for (const value in data) {
+                    createEle("td", tr, td => {
+                        td.textContent = data[value]
+
+                    })
+                  }
+                  // insert img element 
+                  createEle("td", tr ,td =>{
+                    createEle('img', td, img =>{
+                        img.width = 20
+                        img.src = "edit_icon.png"
+                    })
+                  })
+                  createEle("td", tr ,td =>{
+                    createEle('img', td, img =>{
+                        img.width = 20
+                        img.src = "delete_icon.jfif"
+                    })
+                  })
+            } )
+        }
+    })
 }
