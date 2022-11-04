@@ -113,8 +113,47 @@ const Sortobj = sortobj =>{
 }
 
 // read the value usign read button
-
 read.onclick = table;
+
+
+// Update event 
+update.onclick = () =>{
+   const id = parseInt(stdid.value || 0);
+   if(id){
+    db.products.update(id, {
+        name:std.value,
+        enrolment:enroll.value,
+        class: stdclass.value
+
+    }).then((updated) =>{
+        let get = updated ? `Data Updated` : `Couldnt Updated Data`;
+        console.log(get);
+    })
+   }
+    
+}
+
+//delete all records
+
+deleteall.onclick = () =>{
+    db.delete();
+    db = studntdb("Productdb", {
+        products:`++id, name, enrolment, class`
+    });
+    db.open();
+    table();
+}
+
+window.onload = () =>{
+    textID(stdid)
+}
+
+function textID(textboxid){
+    getData(db.products, data=>{
+        textboxid.value = data.id + 1 || 1;
+
+    })
+}
 
 // create dynamic elemetns
 const createEle = (tagname, appendTo, fn) =>{
@@ -159,15 +198,43 @@ function table(){
                     createEle('img', td, img =>{
                         img.width = 20
                         img.src = "edit_icon.png"
+                        img.onclick = editbtn;
+                        img.setAttribute(`data-id`, data.id);
                     })
                   })
                   createEle("td", tr ,td =>{
                     createEle('img', td, img =>{
                         img.width = 20
                         img.src = "delete_icon.jfif"
+                        img.onclick = deletebtn;
+                        img.setAttribute(`data-id`, data.id);
                     })
                   })
             } )
         }
     })
+}
+
+// edit the elememt of database by clicking the edit icon
+function editbtn(event){
+    console.log(event.target)
+    console.log(event.target.dataset.id)
+    let id = parseInt(event.target.dataset.id)
+    console.log(typeof(id))
+    db.products.get(id, data => {
+        console.log(data)
+        stdid.value = data.id || 0;
+        std.value = data.name || "";
+        enroll.value = data.enrolment || "";
+        stdclass.value = data.class || "";
+
+    })
+}
+
+// delete the element of database by clciking the delete icon
+function deletebtn(event){
+    let id = parseInt(event.target.dataset.id);
+    db.products.delete(id);
+    table();
+
 }
