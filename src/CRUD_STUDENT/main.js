@@ -63,6 +63,9 @@ const update = document.getElementById('btn-update');
 const deleteall = document.getElementById('btn-delete-all');
 
 
+//not Found
+const notfound = document.getElementById('notfound');
+
 // insert value usign create 
 create.onclick = (event) => {
    let flag =  bulkcreate(db.products, {
@@ -78,6 +81,12 @@ create.onclick = (event) => {
         // console.log(data.id)
         id.value = data.id + 1 || 1;
     });
+
+    table();
+
+    let insertmsg  = document.querySelector(".insertmsg")
+
+    getMsg(flag, insertmsg);
 }
 
 
@@ -205,12 +214,15 @@ function table(){
                   createEle("td", tr ,td =>{
                     createEle('img', td, img =>{
                         img.width = 20
-                        img.src = "delete_icon.jfif"
+                        img.src = "delete_icon.png"
                         img.onclick = deletebtn;
                         img.setAttribute(`data-id`, data.id);
                     })
                   })
             } )
+        }
+        else{
+            notfound.textContent  = "No Record Found in  the database..!" 
         }
     })
 }
@@ -237,4 +249,19 @@ function deletebtn(event){
     db.products.delete(id);
     table();
 
+}
+
+
+
+    
+function getMsg(flag, element){
+    if(flag){
+        element.className += "movedown";
+
+        setTimeout(() => {
+            element.classList.forEach(classname =>{
+                classname == "movedown"?undefined : element.classList.remove("movedown");
+            })
+        }, 4000);
+    }
 }

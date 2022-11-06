@@ -1,0 +1,128 @@
+
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://img.freepik.com/premium-photo/mint-green-purple-color-background-abstract-blurred-gradient-background-banner-template-mesh-backdrop-with-sweet-colors_335640-3361.jpg');
+}
+.insertmsg,
+.updatemsg,
+.deletemsg{
+    position: absolute;
+    top: -40px;
+}
+
+.movedown{
+    animation: slideup 3.4s ease;
+}
+
+@keyframes slideup {
+    50%{
+        top: 0;
+    }
+
+    100%{
+        top: -40px;
+    }
+}
+
+.Component{
+    top: 90px;
+    position: relative;
+    height:30vw;
+    width: 40vw;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    margin-left: 5%;
+    border-radius: 12px;
+
+}
+
+
+
+.container table{
+    border: 2px solid black;
+    top: -359px;
+   position: relative;
+    width: 55%;
+    margin-left: 48%;
+    border-radius:22px;
+}
+.container table th{
+    background-color: black;
+    color: white;
+}
+
+.FormCom input{
+    /* padding: 10px;
+    padding-right: 100px; */
+    width: 350px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 8px;
+    position: relative;
+    left: 40px;
+    border: none;
+    border: 2px solid black ;
+}
+
+h5{
+    right: 20px;
+    position: relative;
+    top: 43px;
+}
+
+form{
+    left: 50px;
+    position: relative;
+}
+.FormCom{
+    margin-left: 50px;
+    position: relative;
+    top: 10px;
+}
+
+.btn-class{
+    margin: 5px;
+    position: relative;
+    top: 30px;
+    left: 10px;
+    justify-content: space-between;
+}
+.btn-class button{
+    padding: 8px 20px;
+    border: none;
+}
+.Red{
+    background-color: rgb(214, 10, 10);
+    color: white;
+    margin-left: 15px;
+    border-radius:5px ;
+}
+.Green{
+    background-color: rgb(9, 179, 9);
+    color: white;
+    margin-right: 15px;
+    border-radius:5px ;
+}
+.Yellow{
+    background-color: rgb(224, 224, 38);
+    color: white;
+    margin-left: 20px;
+    border-radius:5px ;
+}
+.Blue{
+    background-color: blue;
+    color: white;
+    border-radius:5px ;
+}
+.Title h1{
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 45px;
+    position: relative;
+    top: 20px;
+    margin-left: 30%;
+
+}
+

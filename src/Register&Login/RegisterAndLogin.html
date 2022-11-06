@@ -5,9 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register/Login Page</title>
+    <link rel="stylesheet" href="RegisterAndLogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     
+        <section class="Component1">
+        <form name="submit" action="http://127.0.0.1:5500/src/CRUD_STUDENT/StudentCRUD.html" nethod="get">
+            <div class="SignUptext1">
+              <h2>Sign Up</h2>
+              <p>Welcome to Sign Up to get best user experience </p>
+              </div>
+              <div class="Pageregister">
+                <div class="usernameInput1">
+                  <label htmlFor="username">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    
+                  />
+                </div>
+                <div class="emailInput">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    
+                  />
+                </div>
+                <div class="passwordInput1">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                   
+                  />
+                  </div>
+                <button onclick="Abbas()">Sign Up</button>
+              </div>
+              <div class="oldUser">
+              <p>Already Have An Account?</p>
+              <Link to='/login'><a>Login</a></Link>
+              </div>
+              <div class="Component2">
+              <div class="SignUpWithGoogle2">
+              </div>
+              </div>
+            </form>
+            </section>
+
 </body>
 <script src="R&L.js" ></script>
 </html>
