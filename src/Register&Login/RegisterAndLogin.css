@@ -4,7 +4,7 @@ body{
 }
 
 .Component1{
-    top: 40px;
+    top: 10px;
     position: relative;
     height: 38vw;
     width: 32vw;
@@ -14,7 +14,7 @@ body{
     border-bottom-right-radius:20px;
     left: 220px;
 }
-.Pageregister button{
+.btn {
     padding: 9px 129px;
     border: none;
     background-color: black;
@@ -152,7 +152,6 @@ body{
     margin-top: 10px;
     top: 62px;
     border-radius: 5px;
-
 
 }
 .emailInput label{

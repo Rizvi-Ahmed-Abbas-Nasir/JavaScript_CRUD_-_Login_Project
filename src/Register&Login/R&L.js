@@ -53,7 +53,10 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const error = document.getElementById('error');
 const errorbg = document.getElementById('errorMsg');
-errorbg.style.background  = "rgb(15, 15, 15)"
+errorbg.style.backgroundColor  = "rgb(15, 15, 15)"
+
+// login button
+const btnlogin = document.getElementById('btn-login')
 
 const singup = document.getElementById('btn-signup')
 
@@ -68,10 +71,9 @@ singup.onclick = (event) =>{
          password:password.value
     })
     if(flag){
-            errorbg.style.background = "white"
-            error.innerHTML = "Registered Successfully"
-            errorbg
-        let seconds = 1
+            errorbg.style.background = "white";
+            error.innerHTML = "Registered Successfully";
+            let seconds = 1
             setTimeout( () => {
             // error.style.display = 'none'
             error.innerHTML = ""
@@ -85,7 +87,40 @@ singup.onclick = (event) =>{
         id.value = data.id + 1 || 1;
     });
 
+}
 
+
+
+btnlogin.onclick = () =>{
+    
+    getData(Login_db.authencationInfo, (data)=>{
+        console.log(data)
+        if(username.value == data.name && email.value == data.email && password.value == data.password){
+
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            
+            async function demo() {
+                for (let i = 0; i < 5; i++) {
+                    console.log(`Waiting ${i} seconds...`);
+                    Submit();
+                    await sleep(i * 1000);
+                }
+                console.log('Done');
+                Submit();
+            }
+
+            demo()
+           
+        console.log("OK")
+
+        }
+        else{
+            console.log("Not")
+        }
+    })
 }
 
 const getData = (dbtable, fn) =>{
@@ -98,7 +133,7 @@ const getData = (dbtable, fn) =>{
                 // console.log(table)
 
                obj = Sortobj(table)
-               console.log(obj)
+            //    console.log(obj)
                fn(obj,index++);
             })
         }else{
@@ -118,3 +153,6 @@ const Sortobj = sortobj =>{
     }
     return obj;
 }
+
+
+export default ADMS_Login;
