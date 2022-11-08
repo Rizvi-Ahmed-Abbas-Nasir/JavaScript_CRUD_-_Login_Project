@@ -93,7 +93,7 @@ body{
 
 }
 .Component2{
-    top: -438px;
+    top: -427px;
     position: relative;
     height: 38vw;
     width: 32vw;
@@ -184,6 +184,14 @@ body{
     font-size: 16px;
     position: relative;
     top: 15px;
-    left: 5px;
-    font-family: 'Raleway', sans-serif;
-   }
+    left: 15px;
+  
+}
+.oldUser p{
+    font-size:  15px;
+}
+.oldUser a{
+    margin-left: 65px;
+    position: relative;
+    top: -34px;
+}
