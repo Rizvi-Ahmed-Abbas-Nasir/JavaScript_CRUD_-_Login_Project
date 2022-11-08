@@ -4,7 +4,7 @@ body{
 }
 
 .Component1{
-    top: 70px;
+    top: 40px;
     position: relative;
     height: 38vw;
     width: 32vw;
@@ -194,4 +194,21 @@ body{
     margin-left: 65px;
     position: relative;
     top: -34px;
+}
+
+.errorMsg label{
+    position: relative;
+    top: 12px;
+    margin-left: 25%;
+    color: green;
+    font-size: 25px;
+}
+.errorMsg{
+    width: 30%;
+    height: 60px;
+    background-color: white;
+    border-radius: 50px;
+    margin-left: 33%;
+    position: relative;
+    top: 20px;
 }
