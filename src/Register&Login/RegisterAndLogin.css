@@ -14,10 +14,10 @@ body{
     border-bottom-right-radius:20px;
     left: 220px;
 }
-.btn {
+.btn-signup {
     padding: 9px 129px;
     border: none;
-    background-color: black;
+    background-color: red;
     color: white;
     position: relative;
     left: 80px;
@@ -27,6 +27,21 @@ body{
     font-size: 18px;
     cursor: pointer;
 }
+
+.btn-login {
+    padding: 9px 140px;
+    border: none;
+    background-color: rgb(17, 138, 238);
+    color: white;
+    position: relative;
+    left: 80px;
+    top: 110px;
+    z-index: 10;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 
 .Pageregister{
     position: relative;
@@ -93,7 +108,7 @@ body{
 
 }
 .Component2{
-    top: -427px;
+    top: -400px;
     position: relative;
     height: 38vw;
     width: 32vw;

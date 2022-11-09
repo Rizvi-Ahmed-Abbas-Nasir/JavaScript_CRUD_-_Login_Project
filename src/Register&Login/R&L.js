@@ -78,7 +78,7 @@ singup.onclick = (event) =>{
             // error.style.display = 'none'
             error.innerHTML = ""
             errorbg.style.background  = "rgb(15, 15, 15)"
-            }, seconds * 1000);
+            }, seconds * 3000);
     }
     console.log(flag)
 
@@ -96,29 +96,44 @@ btnlogin.onclick = () =>{
     getData(Login_db.authencationInfo, (data)=>{
         console.log(data)
         if(username.value == data.name && email.value == data.email && password.value == data.password){
+            if(username.value != ""  && email.value != "" && password.value != "" ){
 
 
-            function sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
+            // function sleep(ms) {
+            //     return new Promise(resolve => setTimeout(resolve, ms));
+            // }
             
-            async function demo() {
-                for (let i = 0; i < 5; i++) {
-                    console.log(`Waiting ${i} seconds...`);
-                    Submit();
-                    await sleep(i * 1000);
-                }
-                console.log('Done');
-                Submit();
-            }
+            // async function demo() {
+            //     for (let i = 0; i < 5; i++) {
+            //         console.log(`Waiting ${i} seconds...`);
+            //         Submit();
+            //         await sleep(i * 1000);
+            //     }
+            //     console.log('Done');
+            //     Submit();
+            // }
 
-            demo()
+            // demo()
+
+               
+            window.location.href = "http://127.0.0.1:5500/src/CRUD_STUDENT/StudentCRUD.html";
+            
            
         console.log("OK")
-
+            }
         }
         else{
             console.log("Not")
+
+            errorbg.style.background = "white";
+            error.innerHTML = "Invalide Validation";
+            error.style.color = "red"
+            let seconds = 1
+            setTimeout( () => {
+            // error.style.display = 'none'
+            error.innerHTML = ""
+            errorbg.style.background  = "rgb(15, 15, 15)"
+            }, seconds * 1000);
         }
     })
 }
@@ -153,6 +168,7 @@ const Sortobj = sortobj =>{
     }
     return obj;
 }
+
 
 
 export default ADMS_Login;
